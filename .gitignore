@@ -259,3 +259,12 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Blog.Website/App_Plugins/ModelsBuilder
+/Blog.Website/App_Data/NuGetBackup/20171107-201724
+/Blog.Website/Views
+/Blog.Website/Umbraco_Client
+/Blog.Website/Umbraco
+/Blog.Website/Media
+/Blog.Website/Global.asax
+/Blog.Website/default.aspx
+/Blog.Website/config
