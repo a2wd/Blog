@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 /Blog.Website/App_Data/NuGetBackup/20171107-201724
+/Blog.Website/Properties/PublishProfiles/CustomProfile.pubxml
