@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\uSync.4.0.2\build\uSync.props" Condition="Exists('..\packages\uSync.4.0.2\build\uSync.props')" />
   <Import Project="..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
@@ -83,6 +84,21 @@
     </Reference>
     <Reference Include="interfaces, Version=1.0.6505.22488, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.BackOffice, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.4.0.2\lib\net45\Jumoo.uSync.BackOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.Content, Version=4.0.0.760, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.ContentEdition.4.0.0.760\lib\net45\Jumoo.uSync.Content.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.ContentMappers, Version=3.3.3.740, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.ContentMappers.3.3.3.740\lib\net45\Jumoo.uSync.ContentMappers.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.Core, Version=6.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.Core.6.0.2\lib\net45\Jumoo.uSync.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jumoo.uSync.Snapshots, Version=1.0.2.740, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\uSync.Snapshots.1.0.2.740\lib\net451\Jumoo.uSync.Snapshots.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.7.4\lib\net45\log4net.dll</HintPath>
@@ -250,6 +266,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="App_Plugins\uSync.Content\uSyncDashboardContent.html" />
+    <Content Include="App_Plugins\uSync.Content\uSyncDashboardContentController.js" />
+    <Content Include="App_Plugins\uSyncSnapshots\snapshotdashboard.css" />
+    <Content Include="App_Plugins\uSyncSnapshots\SnapshotDashboard.html" />
+    <Content Include="App_Plugins\uSyncSnapshots\SnapshotDashboardController.js" />
+    <Content Include="App_Plugins\uSyncSnapshots\SnapshotDashboardService.js" />
+    <Content Include="App_Plugins\uSync\uSyncDashboard.css" />
+    <Content Include="App_Plugins\uSync\uSyncDashboard.html" />
+    <Content Include="App_Plugins\uSync\uSyncDashboardController.js" />
+    <Content Include="App_Plugins\uSync\uSyncDashboardService.js" />
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
@@ -271,6 +297,11 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="config\uSyncCore.Config" />
+    <Content Include="config\uSyncBackOffice.Config" />
+    <Content Include="App_Plugins\uSync\package.manifest" />
+    <Content Include="App_Plugins\uSync.Content\package.manifest" />
+    <Content Include="App_Plugins\uSyncSnapshots\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -289,6 +320,7 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -358,9 +390,12 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.4\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\uSync.4.0.2\build\uSync.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.4.0.2\build\uSync.props'))" />
+    <Error Condition="!Exists('..\packages\uSync.4.0.2\build\uSync.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\uSync.4.0.2\build\uSync.targets'))" />
   </Target>
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <Import Project="..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.7.4\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\uSync.4.0.2\build\uSync.targets" Condition="Exists('..\packages\uSync.4.0.2\build\uSync.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
