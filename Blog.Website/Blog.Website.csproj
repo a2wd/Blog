@@ -354,6 +354,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\Blog.generated.cs" />
+    <Compile Include="App_Data\Models\BodyContent.generated.cs" />
+    <Compile Include="App_Data\Models\File.generated.cs" />
+    <Compile Include="App_Data\Models\Folder.generated.cs" />
+    <Compile Include="App_Data\Models\HeadingAndSubheading.generated.cs" />
+    <Compile Include="App_Data\Models\Home.generated.cs" />
+    <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\Member.generated.cs" />
+    <Compile Include="App_Data\Models\Metadata.generated.cs" />
+    <Compile Include="App_Data\Models\SiteSettings.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
